@@ -24,6 +24,9 @@ Cite the software if you use it:
 	isbn={1-901725-53-7},
 	url={https://dx.doi.org/10.5244/C.29.90}
 }
+
+Elements of the python wrapper are adapted from https://github.com/centreborelli/s2p.
+
 """
 
 import os
@@ -58,7 +61,7 @@ def digitize_image(img, dtype=np.uint8):
     rounded_im = np.round(np.iinfo(dtype).max * (np.clip(img, a, b) - a) / (b - a)).astype(dtype)
     return rounded_im
 
-
+# This function is adapted from https://github.com/centreborelli/s2p
 def run(cmd, env=os.environ, timeout=None, shell=False, verbose=False):
     """
     Runs a shell command, and print it before running.
